@@ -1,0 +1,49 @@
+
+
+# Privacy Policy for Event Summary Report Generator
+
+Welcome to our Event Summary Report Generator. Your privacy is critically important to us. This Privacy Policy outlines how we collect, use, and protect your information when you use our service.
+
+## Information We Collect
+
+When you use our Event Summary Report Generator, we collect the information you provide in your event summary requests, including but not limited to:
+
+- Event descriptions
+- Participant details
+- Conversations
+- Follow-up actions
+
+This information is temporarily cached to facilitate the generation of your event summary report.
+
+## How We Use Your Information
+
+The information you provide is used solely for the purpose of generating the event summary report you request. It allows us to:
+
+- Process your event details
+- Generate a PDF report based on the provided information
+- Provide you with a link to download the generated report
+
+## Data Retention
+
+Your information is temporarily cached on our servers for the duration necessary to generate and provide you with the event summary report. Once the report is downloaded, we automatically delete your information from our cache. 
+
+We do not store your information beyond this process or use it for any other purposes.
+
+## Data Security
+
+We take the protection of your data seriously. We implement a variety of security measures to maintain the safety of your personal information when you submit a request for an event summary report.
+
+## Changes to This Privacy Policy
+
+We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
+
+## Contact Us
+
+If you have any questions about this Privacy Policy, please contact us:
+
+- By email: greglindberg@gmail.com
+
+This Privacy Policy is effective as of 3-14-2024.
+
+---
+
