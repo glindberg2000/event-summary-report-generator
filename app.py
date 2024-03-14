@@ -18,11 +18,22 @@ from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 
+# Define the application version
+APP_VERSION = "1.0.0"
+
 app = Flask(__name__)
 
 # Temporary in-memory storage for hash to filename mapping.
 # Note: Consider replacing with a more persistent storage solution for production use.
 hash_map = {}
+
+
+@app.route("/version", methods=["GET"])
+def get_version():
+    """
+    A route to return the current version of the application.
+    """
+    return jsonify(version=APP_VERSION)
 
 
 def generate_unique_filename():
