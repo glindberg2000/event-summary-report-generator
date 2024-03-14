@@ -86,5 +86,12 @@ def generate_report():
         return {"error": "Failed to generate the report"}, 500
 
 
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        host=os.getenv("REPLIT_HOST", "0.0.0.0"),
+        port=int(os.getenv("REPLIT_PORT", 5000)),
+        debug=True,
+    )
