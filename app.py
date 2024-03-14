@@ -19,7 +19,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 
 # Define the application version
-APP_VERSION = "1.0.0"
+APP_VERSION = "1.0.1"
 
 app = Flask(__name__)
 
@@ -100,7 +100,9 @@ def generate_report():
     if request.json.get("hashed_link", False):
         file_hash = generate_hash_for_file(filename)
         hash_map[file_hash] = filename
-        return jsonify(url=f"/download-report/{file_hash}")
+        # Construct the full URL using request.url_root
+        full_url = request.url_root.rstrip("/") + "/download-report/" + file_hash
+        return jsonify(url=full_url)
     else:
         try:
             return send_file(filename, as_attachment=True)

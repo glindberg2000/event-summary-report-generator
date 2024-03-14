@@ -47,8 +47,7 @@ def send_report_generation_request(url, payload):
 if __name__ == "__main__":
     # Define the API endpoint URL
     api_url = (
-        # "https://event-summary-report-generator-cryptoplato.replit.app/generate-report"
-        " https://event-summary-report-generator-cryptoplato.replit.app/generate-report"
+        "https://event-summary-report-generator-cryptoplato.replit.app/generate-report"
         # "http://localhost:5000/generate-report"
     )
 
