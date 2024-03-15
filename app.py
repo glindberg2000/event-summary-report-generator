@@ -19,7 +19,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 
 # Define the application version
-APP_VERSION = "1.0.1"
+APP_VERSION = "1.0.2"
 
 app = Flask(__name__)
 
@@ -34,6 +34,13 @@ def get_version():
     A route to return the current version of the application.
     """
     return jsonify(version=APP_VERSION)
+
+
+@app.route("/privacy-policy")
+def privacy_policy():
+    return send_from_directory(
+        os.path.join(app.root_path), "privacy.txt", as_attachment=True
+    )
 
 
 def generate_unique_filename():
