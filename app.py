@@ -7,6 +7,7 @@ either directly or through a secure hashed link.
 
 Author: glindberg2000
 Date: 3/13/2024
+Version: 1.0.3
 """
 
 from flask import Flask, request, send_file, jsonify, abort, send_from_directory
@@ -19,13 +20,18 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 
 # Define the application version
-APP_VERSION = "1.0.2"
+APP_VERSION = "1.0.3"
 
 app = Flask(__name__)
 
 # Temporary in-memory storage for hash to filename mapping.
 # Note: Consider replacing with a more persistent storage solution for production use.
 hash_map = {}
+
+
+@app.route("/openapi.yaml")
+def openapi_spec():
+    return send_from_directory(".", "openapi.yaml")
 
 
 @app.route("/version", methods=["GET"])

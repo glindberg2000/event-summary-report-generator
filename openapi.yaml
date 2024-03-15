@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+  title: Event Summary Report Generator API
+  description:
+    A Flask application designed to generate PDF event summaries. Supports returning a secure, hashed link for
+    report download.
+  version: 1.0.3
+servers:
+  - url: https://event-summary-report-generator-cryptoplato.replit.app
+paths:
+  /generate-report:
+    post:
+      operationId: generateReport
+      summary: Generates a PDF report or a hashed link to the report, based on input details.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input_data:
+                  type: object
+                  description: Contains event description, key participants, notable conversations, and follow-up actions.
+                  properties:
+                    Event Description:
+                      type: array
+                      items:
+                        type: string
+                    Key Participants:
+                      type: array
+                      items:
+                        type: string
+                    Notable Conversations:
+                      type: array
+                      items:
+                        type: string
+                    Follow-Up Actions:
+                      type: array
+                      items:
+                        type: string
+                hashed_link:
+                  type: boolean
+                  description: If True, returns a hashed link to the PDF report instead of the binary file.
+      responses:
+        "200":
+          description: Either a PDF report (binary) or a hashed link to the report, based on the request.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    properties:
+                      url:
+                        type: string
+                        description: The secure, hashed link to the generated report.
+                  - type: string
+                    format: binary
+                    description: The PDF report file (if hashed_link is not True).
+  /version:
+    get:
+      operationId: getVersion
+      summary: Returns the current version of the application.
+      responses:
+        "200":
+          description: Current version of the application.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version:
+                    type: string
+/privacy-policy:
+  get:
+    operationId: getPrivacyPolicy
+    summary: Returns the privacy policy as plain text.
+    responses:
+      "200":
+        description: Privacy policy returned successfully.
+        content:
+          text/plain:
+            schema:
+              type: string
