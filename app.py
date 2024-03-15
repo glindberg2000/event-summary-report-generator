@@ -9,7 +9,7 @@ Author: glindberg2000
 Date: 3/13/2024
 """
 
-from flask import Flask, request, send_file, jsonify, abort
+from flask import Flask, request, send_file, jsonify, abort, send_from_directory
 import hashlib
 import os
 import uuid
