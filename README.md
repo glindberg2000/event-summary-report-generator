@@ -51,8 +51,7 @@ To generate a report and receive it as a direct download, send a POST request to
   }
 }
 
-### Generating a Report with a Secure Hashed Link
-To generate a report and receive a secure hashed link for downloading it, include the hashed_link parameter set to true in your request payload.
+### Generating a Report with a Secure Hashed Link (This is useful for also embedding this app into a function in OpenAI GPT. Use the openai.yaml url for scheme generation.) To generate a report and receive a secure hashed link for downloading it, include the hashed_link parameter set to true in your request payload.
 
 {
   "input_data": {

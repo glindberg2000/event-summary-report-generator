@@ -3,7 +3,8 @@ event_summary_reporter.py
 
 A Flask application designed to generate PDF event summary reports from JSON input.
 This script allows users to input event details via a POST request and returns a PDF report
-either directly or through a secure hashed link.
+either directly or through a secure hashed link. The app is designed to be called 
+from an OpenAI GPT function.
 
 Author: glindberg2000
 Date: 3/13/2024
